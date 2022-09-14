@@ -1,13 +1,9 @@
 class Pizza {
-    name: string;
-    toppoings: string[] = [];
+    public toppoings: string[] = [];
 
-    constructor(name: string)
-    {
-        this.name = name;
-    }
+    constructor(private name: string) {}
 
-    addTopping (topping: string){
+    public addTopping (topping: string){
         this.toppoings.push(topping);
     }
 }
