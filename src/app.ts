@@ -1,4 +1,8 @@
-abstract class Sizes {
+interface SizesInterface {
+    availableSizes: string[];
+}
+
+abstract class Sizes implements SizesInterface {
     constructor (protected sizes: string[]) {}
 
     set availableSizes (sizes: string[]) {
@@ -10,8 +14,15 @@ abstract class Sizes {
     }
 }
 
-class Pizza extends Sizes {
-    public toppoings: string[] = [];
+interface PizzaInterface extends SizesInterface {
+    readonly name: string;
+    toppings: string[];
+    updateSizes (sizes: string[]): void;
+    addTopping (topping: string): void;
+}
+
+class Pizza extends Sizes implements PizzaInterface {
+    public toppings: string[] = [];
 
     constructor(readonly name: string, sizes: string[]) {
         super(sizes);
@@ -22,7 +33,7 @@ class Pizza extends Sizes {
     }
 
     public addTopping (topping: string) {
-        this.toppoings.push(topping);
+        this.toppings.push(topping);
     }
 }
 
