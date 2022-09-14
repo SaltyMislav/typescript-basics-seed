@@ -1,3 +1,21 @@
+class Sizes {
+    constructor (public sizes: string[]) {}
+
+    set availableSizes (sizes: string[]) {
+        this.sizes = sizes;
+    }
+
+    get availableSizes () {
+        return this.sizes;
+    }
+}
+
+const sizes = new Sizes (['small', 'medium']);
+console.log(sizes.availableSizes);
+
+sizes.availableSizes = ['medium', 'large'];
+console.log(sizes.availableSizes);
+
 class Pizza {
     public toppoings: string[] = [];
 
@@ -8,17 +26,6 @@ class Pizza {
     }
 }
 
-/*function Pizza(name: string) {
-    this.name = name;
-    this.toppings = [];
-}
-
-Pizza.prototype.addTopping = function addTopping(topping: string) {
-    this.toppings.push(topping);
-}*/
-
 const pizza = new Pizza ('Pepperoni');
 
 pizza.addTopping('pepperoni');
-//pizza.name = 'ABC';  cant assign the name because of readonly
-console.log (pizza.name);
