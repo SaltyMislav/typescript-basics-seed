@@ -1,10 +1,9 @@
-let cupon: string | null = 'pizza25';
+let pizzaSize: string = 'small';
 
-function removeCupon(): void {
-    cupon = null;
+function selectSize (size: 'small' | 'medium' | 'large'): void{
+    pizzaSize = size;
 }
 
-console.log(cupon);
+selectSize ('medium');
 
-removeCupon();
-console.log(cupon);
+console.log (`Pizza size: ${pizzaSize}`);
