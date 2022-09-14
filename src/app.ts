@@ -1,7 +1,7 @@
 class Pizza {
     public toppoings: string[] = [];
 
-    constructor(private name: string) {}
+    constructor(readonly name: string) {}
 
     public addTopping (topping: string){
         this.toppoings.push(topping);
@@ -20,5 +20,5 @@ Pizza.prototype.addTopping = function addTopping(topping: string) {
 const pizza = new Pizza ('Pepperoni');
 
 pizza.addTopping('pepperoni');
-
-console.log(pizza);
+//pizza.name = 'ABC';  cant assign the name because of readonly
+console.log (pizza.name);
