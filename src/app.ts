@@ -1,13 +1,6 @@
-const pizzas = [
-    { name: 'Pepperoni', toppings: ['pepperoni']}
-];
-
-const mappedPizzas = pizzas.map(pizza => pizza.name.toUpperCase());
-
-console.log(mappedPizzas);
-const pizza = {
-    name: 'Blazzing Inferno',
-    getName: () => pizza.name,
+function multiply (a: number, b:number = 25){
+    return a * b;
 }
 
-console.log(pizza.getName());
+console.log(multiply(5));
+console.log(multiply(5, 35));
