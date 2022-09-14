@@ -1,10 +1,13 @@
-class Cupon {
-    static allowed = ['Pepperoni', 'Blazing Inferno'];
-    static create(percentage: number) {
-        return `PIZZA_RESTAURANT_${percentage}`;
-    }
+const pizzas = [
+    { name: 'Pepperoni', toppings: ['pepperoni']}
+];
+
+const mappedPizzas = pizzas.map(pizza => pizza.name.toUpperCase());
+
+console.log(mappedPizzas);
+const pizza = {
+    name: 'Blazzing Inferno',
+    getName: () => pizza.name,
 }
 
-console.log(Cupon.create(25));
-
-//const date = Date.now()
+console.log(pizza.getName());
